@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  frontend:
+  reactapp2:
     build:
       context: .
       dockerfile: Dockerfile

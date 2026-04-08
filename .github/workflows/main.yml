@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Frontend Docker image
-        run: docker build -t reactapp1 -f Dockerfile .
+        run: docker build -t reactapp2 -f Dockerfile .
 
       - name: Push Frontend Docker image to Docker Hub
         run: |
           echo "${{ vars.DOCKER_PASSWORD || secrets.DOCKER_PASSWORD }}" | docker login -u "${{ vars.DOCKER_USERNAME || secrets.DOCKER_USERNAME }}" --password-stdin
-          docker tag reactapp1 "${{ vars.DOCKER_USERNAME || secrets.DOCKER_USERNAME }}"/reactapp1
-          docker push "${{ vars.DOCKER_USERNAME || secrets.DOCKER_USERNAME }}"/reactapp1
+          docker tag reactapp2 "${{ vars.DOCKER_USERNAME || secrets.DOCKER_USERNAME }}"/reactapp2
+          docker push "${{ vars.DOCKER_USERNAME || secrets.DOCKER_USERNAME }}"/reactapp2
